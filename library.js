@@ -49,6 +49,14 @@ class Track {
     this.rating = rating;
     this.length = length;
   }
+
+  set rating(rating) {
+    if (rating >= 1 && rating <= 5) {
+      this._rating = rating;
+    } else {
+      throw "Rating must be an integer from 1 to 5."
+    }
+  }
 }
 
 let library1 = new Library('Tunes', 'Theresa');
@@ -76,5 +84,3 @@ playlist2.addTrack(track5);
 playlist2.addTrack(track6);
 
 library1.addPlaylist(playlist2);
-
-console.log(playlist1.totalDuration);
